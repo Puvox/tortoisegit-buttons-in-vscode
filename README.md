@@ -2,7 +2,7 @@
 
 TortoiseGit (https://tortoisegit.org/) is a windows GUI client for git. This extension adds different TortoiseGit command buttons in VScode File-Explorer, when you right-click on any file/folder.
 
-![Screenshot](screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/Puvox/tortoisegit-buttons-in-vscode/main/screenshot.png)
 
 - Switch Branch
 - Pull
