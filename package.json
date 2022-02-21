@@ -1,0 +1,218 @@
+{
+	"name": "tortoisegit-buttons-in-vscode",
+	"displayName": "TortoiseGit Buttons",
+	"description": "Shows TortoiseGit buttons in VScode File Explorer, when you right-click on any file/folder.",
+	"version": "0.0.1",
+	"publisher": "Puvox",
+	"engines": {
+		"vscode": "^1.64.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "icon.png",
+	"activationEvents": [
+        "onCommand:puvox.tgit.helloWorld",
+		"onCommand:puvox.tgit.switch",
+		"onCommand:puvox.tgit.pull",
+		"onCommand:puvox.tgit.commit",
+		"onCommand:puvox.tgit.push",
+		"onCommand:puvox.tgit.stashsave",
+		"onCommand:puvox.tgit.stashapply",
+		"onCommand:puvox.tgit.rename",
+		"onCommand:puvox.tgit.log",
+		"onCommand:puvox.tgit.refbrowse",
+		"onCommand:puvox.tgit.rebase",
+		"onCommand:puvox.tgit.resolve"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Puvox/tortoisegit-buttons-in-vscode.git"
+	},
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "puvox.tgit.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "puvox.tgit.switch",
+				"title": "🐢 Switch"
+			},
+			{
+				"command": "puvox.tgit.pull",
+				"title": "🐢 Pull"
+			},
+			{
+				"command": "puvox.tgit.commit",
+				"title": "🐢 Commit"
+			},
+			{
+				"command": "puvox.tgit.push",
+				"title": "🐢 Push"
+			},
+			{
+				"command": "puvox.tgit.stashsave",
+				"title": "🐢 Stash Save"
+			},
+			{
+				"command": "puvox.tgit.stashapply",
+				"title": "🐢 Stash Apply"
+			},
+			{
+				"command": "puvox.tgit.rename",
+				"title": "🐢 Rename"
+			},
+			{
+				"command": "puvox.tgit.log",
+				"title": "🐢 Log"
+			},
+			{
+				"command": "puvox.tgit.refbrowse",
+				"title": "🐢 RefBrowse"
+			},
+			{
+				"command": "puvox.tgit.rebase",
+				"title": "🐢 Rebase"
+			},
+			{
+				"command": "puvox.tgit.resolve",
+				"title": "🐢 Resolve"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "puvox.tgit.switch",
+				"key": "",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "puvox.tgit.switch",
+					"when": "editorFocus",
+					"group": "tgit@1"
+				},
+				{
+					"command": "puvox.tgit.pull",
+					"when": "editorFocus",
+					"group": "tgit@2"
+				},
+				{
+					"command": "puvox.tgit.commit",
+					"when": "editorFocus",
+					"group": "tgit@3"
+				},
+				{
+					"command": "puvox.tgit.push",
+					"when": "editorFocus",
+					"group": "tgit@4"
+				},
+				{
+					"command": "puvox.tgit.stashsave",
+					"when": "editorFocus",
+					"group": "tgit@5"
+				},
+				{
+					"command": "puvox.tgit.stashapply",
+					"when": "editorFocus",
+					"group": "tgit@6"
+				},
+				{
+					"command": "puvox.tgit.rename",
+					"when": "editorFocus",
+					"group": "tgit@7"
+				},
+				{
+					"command": "puvox.tgit.log",
+					"when": "editorFocus",
+					"group": "tgit@8"
+				},
+				{
+					"command": "puvox.tgit.refbrowse",
+					"when": "editorFocus",
+					"group": "tgit@9"
+				},
+				{
+					"command": "puvox.tgit.rebase",
+					"when": "editorFocus",
+					"group": "tgit@10"
+				},
+				{
+					"command": "puvox.tgit.resolve",
+					"when": "editorFocus",
+					"group": "tgit@11"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "puvox.tgit.switch",
+					"group": "tgit@1"
+				},
+				{
+					"command": "puvox.tgit.pull",
+					"group": "tgit@2"
+				},
+				{
+					"command": "puvox.tgit.commit",
+					"group": "tgit@3"
+				},
+				{
+					"command": "puvox.tgit.push",
+					"group": "tgit@4"
+				},
+				{
+					"command": "puvox.tgit.stashsave",
+					"group": "tgit@5"
+				},
+				{
+					"command": "puvox.tgit.stashapply",
+					"group": "tgit@6"
+				},
+				{
+					"command": "puvox.tgit.rename",
+					"group": "tgit@7"
+				},
+				{
+					"command": "puvox.tgit.log",
+					"group": "tgit@8"
+				},
+				{
+					"command": "puvox.tgit.refbrowse",
+					"group": "tgit@9"
+				},
+				{
+					"command": "puvox.tgit.rebase",
+					"group": "tgit@10"
+				},
+				{
+					"command": "puvox.tgit.resolve",
+					"group": "tgit@11"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.64.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.9.1",
+		"@typescript-eslint/parser": "^5.9.1",
+		"eslint": "^8.6.0",
+		"glob": "^7.2.0",
+		"mocha": "^9.1.3",
+		"typescript": "^4.5.4",
+		"@vscode/test-electron": "^2.0.3"
+	}
+}
