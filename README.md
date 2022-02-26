@@ -1,10 +1,11 @@
 # TortoiseGit Command Buttons
 
-TortoiseGit (https://tortoisegit.org/) is a windows GUI client for git. This [VISUAL STUDIO CODE extension](https://marketplace.visualstudio.com/items?itemName=Puvox.tortoisegit-buttons-in-vscode) adds different TortoiseGit command buttons in sidebar File-Explorer, when you right-click on any file/folder.
+This [VISUAL STUDIO CODE extension](https://marketplace.visualstudio.com/items?itemName=Puvox.tortoisegit-buttons-in-vscode) adds different [TortoiseGit](https://tortoisegit.org/) command buttons in right-click of sidebar File-Explorer.
 
 ![Screenshot](https://raw.githubusercontent.com/Puvox/tortoisegit-buttons-in-vscode/main/screenshot.png)
 
 To avoid extra overload of menu, not [all tortoise-git commands](https://tortoisegit.org/docs/tortoisegit/tgit-automation.html) are added, but only the below ones :
+
 - Pull
 - Fetch
 - Commit
@@ -26,6 +27,7 @@ To avoid extra overload of menu, not [all tortoise-git commands](https://tortois
 - Merge
 - Switch (Checkout/Create) Branch
 
+*Note: this extension is purely lightweight and doesn't use any extra binary files or dependencies to execute commands, instead this extension is just wrapper, which directly pass the commands to TortoiseGit.*
 ## Release Notes
 
 ### 1.0.0
