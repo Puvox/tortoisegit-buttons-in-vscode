@@ -2,7 +2,7 @@
 	"name": "tortoisegit-buttons-in-vscode",
 	"displayName": "TortoiseGit Buttons",
 	"description": "Shows TortoiseGit buttons in VScode File-Explorer, when you right-click on any file/folder.",
-	"version": "0.1.3",
+	"version": "0.1.31",
 	"publisher": "Puvox",
 	"engines": {
 		"vscode": "^1.64.0"
@@ -29,12 +29,12 @@
 		"onCommand:puvox.tgit.log",
 		"onCommand:puvox.tgit.blame",
 		"onCommand:puvox.tgit.diff",
+		"onCommand:puvox.tgit.repostatus",
+		"onCommand:puvox.tgit.showcompare",
 		"onCommand:puvox.tgit.refbrowse",
 		"onCommand:puvox.tgit.repobrowser",
 		"onCommand:puvox.tgit.revisiongraph",
 		"onCommand:puvox.tgit.resolve",
-		"onCommand:puvox.tgit.repostatus",
-		"onCommand:puvox.tgit.showcompare",
 		"onCommand:puvox.tgit.conflicteditor",
 		"onCommand:puvox.tgit.cleanup",
 		"onCommand:puvox.tgit.rebase",
@@ -178,7 +178,7 @@
 			},
 			{
 				"command": "puvox.tgit.settings",
-				"title": "⚙️ ⚙ Settings"
+				"title": "⚙️ Settings"
 			}
 		],
 		"submenus": [
@@ -233,7 +233,7 @@
 				{
 					"submenu": "puvox.tgit.sub_branch",
 					"when": "editorFocus",
-					"group": "t_git@3"
+					"group": "t_git@27"
 				}
 			],
 			"explorer/context": [
@@ -259,7 +259,7 @@
 				},
 				{
 					"submenu": "puvox.tgit.sub_branch",
-					"group": "t_git@3"
+					"group": "t_git@27"
 				}
 			],
 			"editor/title/context": [
@@ -285,7 +285,7 @@
 				},
 				{
 					"submenu": "puvox.tgit.sub_branch",
-					"group": "t_git@3"
+					"group": "t_git@27"
 				}
             ],
 			"puvox.tgit.sub_sync" : [
