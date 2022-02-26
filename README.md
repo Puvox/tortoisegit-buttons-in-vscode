@@ -1,6 +1,6 @@
 # TortoiseGit Command Buttons
 
-This [VISUAL STUDIO CODE extension](https://marketplace.visualstudio.com/items?itemName=Puvox.tortoisegit-buttons-in-vscode) adds different [TortoiseGit](https://tortoisegit.org/) command buttons in right-click of sidebar File-Explorer.
+This [VISUAL STUDIO CODE extension](https://marketplace.visualstudio.com/items?itemName=Puvox.tortoisegit-buttons-in-vscode) adds buttons in right-click menu of sidebar File-Explorer, to execute TortoiseGit commands. *(This is an absolutely ligthweight extension without including dependencies or binary files, instead a small plain `.js` file, which is just a wrapper to pass commands to TotroiseGit)*
 
 ![Screenshot](https://raw.githubusercontent.com/Puvox/tortoisegit-buttons-in-vscode/main/screenshot.png)
 
@@ -27,13 +27,13 @@ To avoid extra overload of menu, not [all tortoise-git commands](https://tortois
 - Merge
 - Switch (Checkout/Create) Branch
 
-*Note: this extension is purely lightweight and doesn't use any extra binary files or dependencies to execute commands, instead this extension is just wrapper, which directly pass the commands to TortoiseGit.*
-## Release Notes
-
-### 1.0.0
-
-Initial release.
 
 ## Build
 
-To build, run `npm i` and then `vsce package` (you need to have vsce installed by `npm install -g vsce`) and it produces .vsix package.
+Run `npm i` and then `vsce package` (you need to have vsce installed by `npm install -g vsce`) and it produces .vsix package.
+
+## Release Notes
+
+### 0.0.1
+
+Initial release.
