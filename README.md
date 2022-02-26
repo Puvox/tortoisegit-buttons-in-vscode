@@ -4,28 +4,7 @@ This [VISUAL STUDIO CODE extension](https://marketplace.visualstudio.com/items?i
 
 ![Screenshot](https://raw.githubusercontent.com/Puvox/tortoisegit-buttons-in-vscode/main/screenshot.png)
 
-To avoid extra overload of menu, not [all tortoise-git commands](https://tortoisegit.org/docs/tortoisegit/tgit-automation.html) are added, but only the below ones :
-
-- Pull
-- Fetch
-- Commit
-- Push
-- Stash
-- Stash Apply
-- Stash Pop
-- Rename
-- Revert
-- Log
-- Blame
-- Diff
-- Browse Ref
-- Browse Repo
-- Resolve
-- Conflict editor
-- Cleanup
-- Rebase
-- Merge
-- Switch (Checkout/Create) Branch
+Most of [tortoise-git commands](https://tortoisegit.org/docs/tortoisegit/tgit-automation.html) are supported by this extension.
 
 
 ## Build
