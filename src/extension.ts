@@ -13,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "TortoiseGit Buttons" is now active!');
 
 	const allCommands = [
-		'switch', 'pull', 'commit', 'push', 'stashsave', 'stashapply', 'rename', 'log', 'refbrowse', 'rebase', 'resolve',
+		'pull', 'fetch', 'commit', 'push', 'stashsave', 'stashapply', 'stashpop', 'rename', 'revert',  'log', 'blame', 'diff', 'refbrowse','repobrowser', 'resolve', 'conflicteditor', 'cleanup', 'rebase', 'merge', 'switch'
 	];
 	for (const value of allCommands) {
 		let disposable = vscode.commands.registerCommand("puvox.tgit."+value, (uri) => {
