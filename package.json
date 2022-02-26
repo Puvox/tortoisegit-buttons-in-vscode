@@ -133,187 +133,220 @@
 				{
 					"command": "puvox.tgit.pull",
 					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@5"
 				},
 				{
 					"command": "puvox.tgit.fetch",
 					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@10"
 				},
 				{
 					"command": "puvox.tgit.commit",
 					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@15"
 				},
 				{
 					"command": "puvox.tgit.push",
 					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@20"
 				},
 				{
-					"command": "puvox.tgit.stashsave",
+					"submenu": "puvox.tgit.sub_stash",
 					"when": "editorFocus",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.stashapply",
-					"when": "editorFocus",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.stashpop",
-					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@25"
 				},
 				{
 					"command": "puvox.tgit.rename",
 					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@30"
 				},
 				{
-					"command": "puvox.tgit.log",
+					"submenu": "puvox.tgit.sub_repologs",
 					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@35"
 				},
 				{
-					"command": "puvox.tgit.refbrowse",
+					"submenu": "puvox.tgit.sub_resolutions",
 					"when": "editorFocus",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.repobrowser",
-					"when": "editorFocus",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.resolve",
-					"when": "editorFocus",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.conflicteditor",
-					"when": "editorFocus",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.revert",
-					"when": "editorFocus",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.blame",
-					"when": "editorFocus",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.cleanup",
-					"when": "editorFocus",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.diff",
-					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@40"
 				},
 				{
 					"command": "puvox.tgit.rebase",
 					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@90"
 				},
 				{
 					"command": "puvox.tgit.merge",
 					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@95"
 				},
 				{
 					"command": "puvox.tgit.switch",
 					"when": "editorFocus",
-					"group": "tgit@1"
+					"group": "tgit@100"
 				}
 			],
 			"explorer/context": [
 				{
 					"command": "puvox.tgit.pull",
-					"group": "tgit@1"
+					"group": "tgit@5"
 				},
 				{
 					"command": "puvox.tgit.fetch",
-					"group": "tgit@1"
+					"group": "tgit@10"
 				},
 				{
 					"command": "puvox.tgit.commit",
-					"group": "tgit@1"
+					"group": "tgit@15"
 				},
 				{
 					"command": "puvox.tgit.push",
-					"group": "tgit@1"
+					"group": "tgit@20"
 				},
 				{
-					"command": "puvox.tgit.stashsave",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.stashapply",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.stashpop",
-					"group": "tgit@1"
+					"submenu": "puvox.tgit.sub_stash",
+					"group": "tgit@25"
 				},
 				{
 					"command": "puvox.tgit.rename",
-					"group": "tgit@1"
+					"group": "tgit@30"
 				},
 				{
-					"command": "puvox.tgit.log",
-					"group": "tgit@1"
+					"submenu": "puvox.tgit.sub_repologs",
+					"group": "tgit@35"
 				},
 				{
-					"command": "puvox.tgit.refbrowse",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.repobrowser",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.resolve",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.conflicteditor",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.revert",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.blame",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.cleanup",
-					"group": "tgit@1"
-				},
-				{
-					"command": "puvox.tgit.diff",
-					"group": "tgit@1"
+					"submenu": "puvox.tgit.sub_resolutions",
+					"group": "tgit@35"
 				},
 				{
 					"command": "puvox.tgit.rebase",
-					"group": "tgit@1"
+					"group": "tgit@90"
 				},
 				{
 					"command": "puvox.tgit.merge",
-					"group": "tgit@1"
+					"group": "tgit@95"
 				},
 				{
 					"command": "puvox.tgit.switch",
-					"group": "tgit@1"
+					"group": "tgit@100"
+				}
+			],
+			"editor/title/context": [
+				{
+					"command": "puvox.tgit.pull",
+					"group": "tgit@5"
+				},
+				{
+					"command": "puvox.tgit.fetch",
+					"group": "tgit@10"
+				},
+				{
+					"command": "puvox.tgit.commit",
+					"group": "tgit@15"
+				},
+				{
+					"command": "puvox.tgit.push",
+					"group": "tgit@20"
+				},
+				{
+					"submenu": "puvox.tgit.sub_stash",
+					"group": "tgit@25"
+				},
+				{
+					"command": "puvox.tgit.rename",
+					"group": "tgit@30"
+				},
+				{
+					"submenu": "puvox.tgit.sub_repologs",
+					"group": "tgit@35"
+				},
+				{
+					"submenu": "puvox.tgit.sub_resolutions",
+					"group": "tgit@35"
+				},
+				{
+					"command": "puvox.tgit.rebase",
+					"group": "tgit@90"
+				},
+				{
+					"command": "puvox.tgit.merge",
+					"group": "tgit@95"
+				},
+				{
+					"command": "puvox.tgit.switch",
+					"group": "tgit@100"
+				}
+            ],
+			"puvox.tgit.sub_stash" : [
+				{
+					"command": "puvox.tgit.stashsave",
+					"group": "tgit@25"
+				},
+				{
+					"command": "puvox.tgit.stashapply",
+					"group": "tgit@30"
+				},
+				{
+					"command": "puvox.tgit.stashpop",
+					"group": "tgit@35"
+				}
+			],
+			"puvox.tgit.sub_repologs" : [
+				{
+					"command": "puvox.tgit.log",
+					"group": "tgit@45"
+				},
+				{
+					"command": "puvox.tgit.refbrowse",
+					"group": "tgit@50"
+				},
+				{
+					"command": "puvox.tgit.repobrowser",
+					"group": "tgit@55"
+				},
+				{
+					"command": "puvox.tgit.blame",
+					"group": "tgit@75"
+				},
+				{
+					"command": "puvox.tgit.diff",
+					"group": "tgit@85"
+				}
+			],
+			"puvox.tgit.sub_resolutions" : [
+				{
+					"command": "puvox.tgit.resolve",
+					"group": "tgit@60"
+				},
+				{
+					"command": "puvox.tgit.conflicteditor",
+					"group": "tgit@65"
+				},
+				{
+					"command": "puvox.tgit.revert",
+					"group": "tgit@70"
+				},
+				{
+					"command": "puvox.tgit.cleanup",
+					"group": "tgit@80"
 				}
 			]
-		}
+		},
+		"submenus": [
+		  {
+			"id": "puvox.tgit.sub_stash",
+			"label": "🐢 Stash"
+		  },
+		  {
+			"id": "puvox.tgit.sub_repologs",
+			"label": "🐢 Repo & Logs"
+		  },
+		  {
+			"id": "puvox.tgit.sub_resolutions",
+			"label": "🐢 Conflicts & Resolutions"
+		  }
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
