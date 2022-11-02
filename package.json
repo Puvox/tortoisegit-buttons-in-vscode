@@ -32,6 +32,7 @@
 		"onCommand:puvox.tgit.repostatus",
 		"onCommand:puvox.tgit.showcompare",
 		"onCommand:puvox.tgit.refbrowse",
+		"onCommand:puvox.tgit.reflog",
 		"onCommand:puvox.tgit.repobrowser",
 		"onCommand:puvox.tgit.revisiongraph",
 		"onCommand:puvox.tgit.resolve",
@@ -48,7 +49,10 @@
 		"onCommand:puvox.tgit.settings",
 		"onCommand:puvox.tgit.subadd",
 		"onCommand:puvox.tgit.subupdate",
-		"onCommand:puvox.tgit.subsync"
+		"onCommand:puvox.tgit.subsync",
+		"onCommand:puvox.tgit.export",
+		"onCommand:puvox.tgit.lfslocks",
+		"onCommand:puvox.tgit.daemon"
 	],
 	"contributes": {
 		"commands": [
@@ -58,11 +62,11 @@
 			},
 			{
 				"command": "puvox.tgit.pull",
-				"title": "⇣ Pull"
+				"title": "Pull"
 			},
 			{
 				"command": "puvox.tgit.fetch",
-				"title": "⇣ Fetch"
+				"title": "Fetch"
 			},
 			{
 				"command": "puvox.tgit.push",
@@ -91,6 +95,10 @@
 			{
 				"command": "puvox.tgit.refbrowse",
 				"title": "RefBrowse"
+			},
+			{
+				"command": "puvox.tgit.reflog",
+				"title": "RefLog"
 			},
 			{
 				"command": "puvox.tgit.repobrowser",
@@ -165,6 +173,18 @@
 				"title": "Tag"
 			},
 			{
+				"command": "puvox.tgit.export",
+				"title": "Export"
+			},
+			{
+				"command": "puvox.tgit.lfslocks",
+				"title": "lfslocks"
+			},
+			{
+				"command": "puvox.tgit.daemon",
+				"title": "daemon"
+			},
+			{
 				"command": "puvox.tgit.subadd",
 				"title": "Add"
 			},
@@ -192,7 +212,7 @@
 		  },
 		  {
 			"id": "puvox.tgit.sub_repoothers",
-			"label": "🐢 Repo & Logs & Resolutions"
+			"label": "🐢 Other"
 		  },
 		  {
 			"id": "puvox.tgit.sub_branch",
@@ -226,14 +246,14 @@
 					"group": "t_git@20"
 				},
 				{
-					"submenu": "puvox.tgit.sub_repoothers",
-					"when": "editorFocus",
-					"group": "t_git@35"
-				},
-				{
 					"submenu": "puvox.tgit.sub_branch",
 					"when": "editorFocus",
 					"group": "t_git@27"
+				},
+				{
+					"submenu": "puvox.tgit.sub_repoothers",
+					"when": "editorFocus",
+					"group": "t_git@35"
 				}
 			],
 			"explorer/context": [
@@ -254,12 +274,12 @@
 					"group": "t_git@20"
 				},
 				{
-					"submenu": "puvox.tgit.sub_repoothers",
-					"group": "t_git@35"
-				},
-				{
 					"submenu": "puvox.tgit.sub_branch",
 					"group": "t_git@27"
+				},
+				{
+					"submenu": "puvox.tgit.sub_repoothers",
+					"group": "t_git@35"
 				}
 			],
 			"editor/title/context": [
@@ -280,12 +300,12 @@
 					"group": "t_git@20"
 				},
 				{
-					"submenu": "puvox.tgit.sub_repoothers",
-					"group": "t_git@35"
-				},
-				{
 					"submenu": "puvox.tgit.sub_branch",
 					"group": "t_git@27"
+				},
+				{
+					"submenu": "puvox.tgit.sub_repoothers",
+					"group": "t_git@35"
 				}
             ],
 			"puvox.tgit.sub_sync" : [
@@ -318,16 +338,20 @@
 			],
 			"puvox.tgit.sub_repoothers" : [
 				{
-					"command": "puvox.tgit.blame",
+					"command": "puvox.tgit.log",
 					"group": "t_git_sub_repoothers@3"
 				},
 				{
-					"command": "puvox.tgit.log",
-					"group": "t_git_sub_repoothers@5"
+					"command": "puvox.tgit.blame",
+					"group": "t_git_sub_repoothers@6"
 				},
 				{
 					"command": "puvox.tgit.refbrowse",
 					"group": "t_git_sub_repoothers@10"
+				},
+				{
+					"command": "puvox.tgit.reflog",
+					"group": "t_git_sub_repoothers@11"
 				},
 				{
 					"command": "puvox.tgit.repobrowser",
@@ -383,6 +407,10 @@
 				},
 				{
 					"command": "puvox.tgit.tag",
+					"group": "t_git_sub_repoothers@67"
+				},
+				{
+					"command": "puvox.tgit.export",
 					"group": "t_git_sub_repoothers@67"
 				},
 				{
