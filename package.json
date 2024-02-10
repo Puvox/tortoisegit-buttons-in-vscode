@@ -1,8 +1,8 @@
 {
 	"name": "tortoisegit-buttons-in-vscode",
-	"displayName": "TortoiseGit Buttons",
+	"displayName": "All Buttons of TortoiseGit",
 	"description": "Shows TortoiseGit buttons in VScode File-Explorer, when you right-click on any file/folder.",
-	"version": "0.1.32",
+	"version": "0.1.34",
 	"publisher": "Puvox",
 	"engines": {
 		"vscode": "^1.64.0"
@@ -211,12 +211,12 @@
 			"label": "🐢 Stash"
 		  },
 		  {
-			"id": "puvox.tgit.sub_repoothers",
-			"label": "🐢 Other"
-		  },
-		  {
 			"id": "puvox.tgit.sub_branch",
 			"label": "🐢 Branch "
+		  },
+		  {
+			"id": "puvox.tgit.sub_repoothers",
+			"label": "🐢 Other"
 		  },
 		  {
 			"id": "puvox.tgit.sub_submodule",

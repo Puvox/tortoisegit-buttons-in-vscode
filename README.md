@@ -1,6 +1,9 @@
 # TortoiseGit Command Buttons
 
-This [VISUAL STUDIO CODE extension](https://marketplace.visualstudio.com/items?itemName=Puvox.tortoisegit-buttons-in-vscode) adds buttons in right-click menu of sidebar File-Explorer, to execute TortoiseGit commands. *(This is an absolutely ligthweight extension without including dependencies or binary files, instead a small plain `.js` file, which is just a wrapper to pass commands to TotroiseGit)*
+This VSCODE extension adds buttons in right-click menu (in sidebar and in editor) to execute TortoiseGit commands. 
+
+Note: This is an absolutely ligthweight extension and does not include dependencies or binary files. Only a small plain `.js` file, which only passes commands to TotroiseGit.
+(*if you ever had manually removed `%Program Files%\TortoiseGit\bin` from your environment PATH, place it back*)
 
 ![Screenshot](https://raw.githubusercontent.com/Puvox/tortoisegit-buttons-in-vscode/main/screenshot.png)
 
