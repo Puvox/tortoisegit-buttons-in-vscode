@@ -1,8 +1,8 @@
 {
 	"name": "tortoisegit-buttons-in-vscode",
 	"displayName": "TortoiseGit Buttons",
-	"description": "Shows TortoiseGit buttons in VScode File-Explorer, when you right-click on any file/folder.",
-	"version": "0.1.35",
+	"description": "Lightweight extension, shows TortoiseGit buttons in VScode",
+	"version": "0.1.36",
 	"publisher": "Puvox",
 	"engines": {
 		"vscode": "^1.64.0"
