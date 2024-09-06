@@ -60,7 +60,7 @@ function getPathOfChosenFile(uri : any) {
 }
 
 function registerSettings() {
-    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseLocation', 'C:\\Program Files\\TortoiseGit', vscode.ConfigurationTarget.Workspace);
+    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseLocation', 'C:\\Program Files\\TortoiseGit', vscode.ConfigurationTarget.Global);
 }
 
 function openSettings() {
