@@ -1,6 +1,6 @@
 # TortoiseGit Command Buttons
 
-Add buttons in right-click menu (in sidebar & in editor) to access TortoiseGit commands.
+The VSCODE [extension](https://marketplace.visualstudio.com/items?itemName=Puvox.tortoisegit-buttons-in-vscode) to add buttons in right-click menu (in sidebar & in editor) to access TortoiseGit commands.
 
 ![Screenshot](https://raw.githubusercontent.com/Puvox/tortoisegit-buttons-in-vscode/main/screenshot.png)
 
