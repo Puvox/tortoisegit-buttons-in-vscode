@@ -12,12 +12,11 @@ export function activate(context: vscode.ExtensionContext) {
 		'sync', 'pull', 'fetch', 'commit', 'push', 'stashsave', 'stashapply', 'stashpop', 'rename', 'revert',  'log', 'blame', 'diff', 'repostatus', 'showcompare', 'refbrowse', 'reflog', 'repobrowser', 'revisiongraph', 'resolve', 'conflicteditor', 'cleanup', 'rebase', 'merge', 'switch', 'add', 'remove', 'ignore', 'bisect', 'tag', 'settings', 'subadd', 'subupdate', 'subsync', 'export', 'lfslocks', 'daemon'
 	];
 	for (const value of allCommands) {
-		let disposable = vscode.commands.registerCommand("puvox.tgit." + value, (uri) => {
+        const callback = (uri: any) => {
 			let path = getPathOfChosenFile(uri);
-			console.log("TortoiseGit: " + value + " -> " + path);
 			execTgCommand(value, path);
-            //vscode.window.showInformationMessage('')
-		});
+		};
+		let disposable = vscode.commands.registerCommand("puvox.tgit." + value, callback);
 		context.subscriptions.push(disposable);
 	}
 }
@@ -26,9 +25,12 @@ export function activate(context: vscode.ExtensionContext) {
 async function execTgCommand(cmd : string, path : string) {
     const location = vscode.workspace.getConfiguration('TortoisegitButtons').get('TortoiseLocation') as string;
     const pathToExe = location + '/bin/TortoiseGitProc.exe';
+    const command = `"${pathToExe}" /command:${cmd} /path:"${path}"`;
+    console.log("TortoiseGit: ", command);
+    // vscode.window.showInformationMessage('')
     try {
         await vscode.workspace.fs.stat(vscode.Uri.file(pathToExe));
-        childProcess.exec(`"${pathToExe}" /command:${cmd} /path:"${path}"`, (error : any, stdout : any, stderr : any) => {
+        childProcess.exec(command, (error : any, stdout : any, stderr : any) => {
             if (error) {
                 console.warn(`TortoiseGit [error] -> ${error}`);
             }
