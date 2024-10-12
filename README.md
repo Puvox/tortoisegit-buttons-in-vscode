@@ -6,6 +6,9 @@ The VSCODE [extension](https://marketplace.visualstudio.com/items?itemName=Puvox
 
 Note: This ligthweight extension does not include dependencies or binary files, instead this only passes commands to TotroiseGit. All possible [tortoise-git commands](https://tortoisegit.org/docs/tortoisegit/tgit-automation.html) are supported by this extension.
 
+## WSL support
+
+Works also in WSL, you just need to add path in options.
 
 ## Release Notes
 

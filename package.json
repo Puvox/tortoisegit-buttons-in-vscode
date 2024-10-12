@@ -2,7 +2,7 @@
 	"name": "tortoisegit-buttons-in-vscode",
 	"displayName": "TortoiseGit Buttons",
 	"description": "Lightweight extension, shows TortoiseGit buttons in VScode",
-	"version": "0.1.55",
+	"version": "0.2.0",
 	"publisher": "Puvox",
 	"engines": {
 		"vscode": "^1.64.0"
@@ -16,45 +16,7 @@
 		"url": "https://github.com/Puvox/tortoisegit-buttons-in-vscode.git"
 	},
 	"main": "./out/extension.js",
-	"activationEvents": [
-		"onCommand:puvox.tgit.sync",
-		"onCommand:puvox.tgit.pull",
-		"onCommand:puvox.tgit.fetch",
-		"onCommand:puvox.tgit.commit",
-		"onCommand:puvox.tgit.push",
-		"onCommand:puvox.tgit.stashsave",
-		"onCommand:puvox.tgit.stashapply",
-		"onCommand:puvox.tgit.stashpop",
-		"onCommand:puvox.tgit.rename",
-		"onCommand:puvox.tgit.revert",
-		"onCommand:puvox.tgit.log",
-		"onCommand:puvox.tgit.blame",
-		"onCommand:puvox.tgit.diff",
-		"onCommand:puvox.tgit.repostatus",
-		"onCommand:puvox.tgit.showcompare",
-		"onCommand:puvox.tgit.refbrowse",
-		"onCommand:puvox.tgit.reflog",
-		"onCommand:puvox.tgit.repobrowser",
-		"onCommand:puvox.tgit.revisiongraph",
-		"onCommand:puvox.tgit.resolve",
-		"onCommand:puvox.tgit.conflicteditor",
-		"onCommand:puvox.tgit.cleanup",
-		"onCommand:puvox.tgit.rebase",
-		"onCommand:puvox.tgit.merge",
-		"onCommand:puvox.tgit.switch",
-		"onCommand:puvox.tgit.add",
-		"onCommand:puvox.tgit.remove",
-		"onCommand:puvox.tgit.ignore",
-		"onCommand:puvox.tgit.bisect",
-		"onCommand:puvox.tgit.tag",
-		"onCommand:puvox.tgit.settings",
-		"onCommand:puvox.tgit.subadd",
-		"onCommand:puvox.tgit.subupdate",
-		"onCommand:puvox.tgit.subsync",
-		"onCommand:puvox.tgit.export",
-		"onCommand:puvox.tgit.lfslocks",
-		"onCommand:puvox.tgit.daemon"
-	],
+	"activationEvents": [],
 	"contributes": {
 		"commands": [
 			{
@@ -478,7 +440,13 @@
 				"TortoisegitButtons.TortoiseLocation": {
 					"type": "string",
 					"default": "C:\\Program Files\\TortoiseGit",
-					"description": "TorgoiseGit installation folder location"
+					"editPresentation": "markdown",
+					"markdownDescription": "Installation location. If you run VSCODE workspace in WSL, use such format:  **`/mnt/c/program files/tortoisegit`** (tip: you can also save this settings in 'WSL' workspace instead of 'USER' workspace)"
+				},
+				"TortoisegitButtons.TortoiseWslPrefixLocation": {
+					"type": "string",
+					"default": "",
+					"markdownDescription": "In case you run VSCODE workspace from WSL and files are not located correctly, you might need to add prefix, like: **`\\\\\\\\wsl.localhost\\\\Ubuntu`**"
 				}
 			}
 		}
