@@ -2,7 +2,7 @@
 	"name": "tortoisegit-buttons-in-vscode",
 	"displayName": "TortoiseGit Buttons",
 	"description": "Lightweight extension, shows TortoiseGit buttons in VScode",
-	"version": "0.2.0",
+	"version": "0.2.3",
 	"publisher": "Puvox",
 	"engines": {
 		"vscode": "^1.64.0"
@@ -437,15 +437,27 @@
 			"title": "TortoiseGit Buttons Settings",
 			"type": "object",
 			"properties": {
-				"TortoisegitButtons.TortoiseLocation": {
+				"TortoisegitButtons.TortoiseDirWindows": {
 					"type": "string",
 					"default": "C:\\Program Files\\TortoiseGit",
 					"editPresentation": "markdown",
-					"markdownDescription": "Installation location. If you run VSCODE workspace in WSL, use such format:  **`/mnt/c/program files/tortoisegit`** (tip: you can also save this settings in 'WSL' workspace instead of 'USER' workspace)"
+					"markdownDescription": "Installation location\n(Note, if you think you have correctly setup everything, but still can not make the exetion to find TG correctly, then you might enable the debug mode in TG>Settings>Advanced>Debug and you will see what command is being executed. If the extension has an issue, please report.)"
 				},
-				"TortoisegitButtons.TortoiseWslPrefixLocation": {
+				"TortoisegitButtons.AutodetectWsl": {
+					"type": "boolean",
+					"default": true,
+					"editPresentation": "markdown",
+					"markdownDescription": "try to autodetect if VSCODE workspace is opened inside WSL (using `WSL` Extension) and in such case, extension will work through WSL"
+				},
+				"TortoisegitButtons.TortoiseDirWsl": {
 					"type": "string",
-					"default": "",
+					"default": "/mnt/c/program files/tortoisegit",
+					"editPresentation": "markdown",
+					"markdownDescription": "Installation location (from WSL)"
+				},
+				"TortoisegitButtons.TortoiseWslHomePrefix": {
+					"type": "string",
+					"default": "\\\\\\\\wsl.localhost\\\\Ubuntu",
 					"markdownDescription": "In case you run VSCODE workspace from WSL and files are not located correctly, you might need to add prefix, like: **`\\\\\\\\wsl.localhost\\\\Ubuntu`**"
 				}
 			}

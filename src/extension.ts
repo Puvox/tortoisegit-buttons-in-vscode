@@ -24,24 +24,27 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 async function execTgCommand(cmd : string, path : string) {
-    const installationPath = vscode.workspace.getConfiguration('TortoisegitButtons').get('TortoiseLocation') as string;
-    let finalPath = path;
-    const isWsl = path.startsWith("/");
-    const wslLocationPrefix = vscode.workspace.getConfiguration('TortoisegitButtons').get('TortoiseWslPrefixLocation') as string;
-    if (isWsl && wslLocationPrefix) {
-        finalPath = wslLocationPrefix + finalPath;
+    const installationPathWindows = vscode.workspace.getConfiguration('TortoisegitButtons').get('TortoiseDirWindows') as string;
+    let finalPath = undefined;
+    let tgInstallDir = undefined;
+    if (path.startsWith("/") && (vscode.workspace.getConfiguration('TortoisegitButtons').get('AutodetectWsl') as boolean)) {
+        tgInstallDir = vscode.workspace.getConfiguration('TortoisegitButtons').get('TortoiseDirWsl') as string;
+        const wslLocationPrefix = vscode.workspace.getConfiguration('TortoisegitButtons').get('TortoiseWslHomePrefix') as string;
+        finalPath = wslLocationPrefix + path;
+    } else {
+        tgInstallDir = installationPathWindows;
+        finalPath = path;
     }
-    const pathToExe = installationPath + '/bin/TortoiseGitProc.exe';
+    const pathToExe = tgInstallDir + '/bin/TortoiseGitProc.exe';
     const command = `"${pathToExe}" /command:${cmd} /path:"${finalPath}"`;
     console.log("TortoiseGit: ", command);
     // vscode.window.showInformationMessage('')
     try {
         await vscode.workspace.fs.stat(vscode.Uri.file(pathToExe));
     } catch (error) {
-        const extraNote = isWsl ? ' (Note, you might be using WSL, read the both settings descriptions)' : '';
-        const selection = await vscode.window.showErrorMessage('Can not find TortoiseGit installation.' + extraNote, 'Add TortoiseGit Path');
+        const selection = await vscode.window.showErrorMessage('Can not find TortoiseGit installation. ', 'Add TortoiseGit Path');
 		if (selection !== undefined) {
-            openSettings('TortoiseLocation');
+            openSettings('TortoiseDirWindows');
 		}
     }
     try {
@@ -59,11 +62,11 @@ async function execTgCommand(cmd : string, path : string) {
     } catch (error) {
         let extraMsg = (error as any).message;
         if (path.startsWith("/")) {
-            extraMsg = "If this path is in WSL, you need to add the 'WSL home path' in settings, like: " + wslLocationPrefixExample;
+            extraMsg = "If this path is in WSL, you need to add correct 'WSL home path' in settings, like: " + wslLocationPrefixExample;
         }
         const selection = await vscode.window.showWarningMessage('! ' + extraMsg, 'Add WSL location Prefix');
 		if (selection !== undefined) {
-            openSettings('TortoiseWslPrefixLocation');
+            openSettings('TortoiseWslHomePrefix');
 		}
     }
 
@@ -84,8 +87,9 @@ function getPathOfChosenFile(uri : any) {
 }
 
 function registerSettings() {
-    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseLocation', 'C:\\Program Files\\TortoiseGit', vscode.ConfigurationTarget.Global);
-    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseWslPrefixLocation', '', vscode.ConfigurationTarget.Global);
+    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseDirWindows', 'C:\\Program Files\\TortoiseGit', vscode.ConfigurationTarget.Global); // 
+    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseDirWindows', 'C:\\Program Files\\TortoiseGit', vscode.ConfigurationTarget.Global);
+    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseWslHomePrefix', '');
 }
 
 function openSettings(which : string = '') {
