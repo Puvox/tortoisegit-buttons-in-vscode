@@ -24,7 +24,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 async function execTgCommand(cmd : string, path : string) {
-    const installationPathWindows = vscode.workspace.getConfiguration('TortoisegitButtons').get('TortoiseDirWindows') as string;
     let finalPath = undefined;
     let tgInstallDir = undefined;
     if (path.startsWith("/") && (vscode.workspace.getConfiguration('TortoisegitButtons').get('AutodetectWsl') as boolean)) {
@@ -32,7 +31,7 @@ async function execTgCommand(cmd : string, path : string) {
         const wslLocationPrefix = vscode.workspace.getConfiguration('TortoisegitButtons').get('TortoiseWslHomePrefix') as string;
         finalPath = wslLocationPrefix + path;
     } else {
-        tgInstallDir = installationPathWindows;
+        tgInstallDir = vscode.workspace.getConfiguration('TortoisegitButtons').get('TortoiseDirWindows') as string;
         finalPath = path;
     }
     const pathToExe = tgInstallDir + '/bin/TortoiseGitProc.exe';

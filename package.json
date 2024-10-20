@@ -2,7 +2,7 @@
 	"name": "tortoisegit-buttons-in-vscode",
 	"displayName": "TortoiseGit Buttons",
 	"description": "Lightweight extension, shows TortoiseGit buttons in VScode",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"publisher": "Puvox",
 	"engines": {
 		"vscode": "^1.64.0"
