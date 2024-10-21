@@ -4,11 +4,13 @@ import * as vscode from 'vscode';
 
 const childProcess = require("child_process");
 
+let outputChannel: vscode.OutputChannel;
 const wslLocationPrefixExample = '\\\\\\\\wsl.localhost\\\\Ubuntu';
 
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-    registerSettings();
+    outputChannel = vscode.window.createOutputChannel("tortoisegit-buttons-in-vscode");
+    registerSettings(context);
 	const allCommands = [
 		'sync', 'pull', 'fetch', 'commit', 'push', 'stashsave', 'stashapply', 'stashpop', 'rename', 'revert',  'log', 'blame', 'diff', 'repostatus', 'showcompare', 'refbrowse', 'reflog', 'repobrowser', 'revisiongraph', 'resolve', 'conflicteditor', 'cleanup', 'rebase', 'merge', 'switch', 'add', 'remove', 'ignore', 'bisect', 'tag', 'settings', 'subadd', 'subupdate', 'subsync', 'export', 'lfslocks', 'daemon'
 	];
@@ -36,7 +38,7 @@ async function execTgCommand(cmd : string, path : string) {
     }
     const pathToExe = tgInstallDir + '/bin/TortoiseGitProc.exe';
     const command = `"${pathToExe}" /command:${cmd} /path:"${finalPath}"`;
-    console.log("TortoiseGit: ", command);
+    outputChannel.appendLine("TortoiseGit: " + command);
     // vscode.window.showInformationMessage('')
     try {
         await vscode.workspace.fs.stat(vscode.Uri.file(pathToExe));
@@ -49,13 +51,13 @@ async function execTgCommand(cmd : string, path : string) {
     try {
         childProcess.exec(command, (error : any, stdout : any, stderr : any) => {
             if (error) {
-                console.warn(`TortoiseGit [error] -> ${error}`);
+                outputChannel.appendLine(`TortoiseGit [error] -> ${error}`);
             }
             if (stdout) {
-                console.log(`TortoiseGit [stdout] -> ${stdout}`);
+                outputChannel.appendLine(`TortoiseGit [stdout] -> ${stdout}`);
             }
             if (stderr) {
-                console.error(`TortoiseGit [stderr] -> ${stderr}`);
+                outputChannel.appendLine(`TortoiseGit [stderr] -> ${stderr}`);
             }
         });
     } catch (error) {
@@ -85,10 +87,13 @@ function getPathOfChosenFile(uri : any) {
     }
 }
 
-function registerSettings() {
-    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseDirWindows', 'C:\\Program Files\\TortoiseGit', vscode.ConfigurationTarget.Global); // 
-    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseDirWindows', 'C:\\Program Files\\TortoiseGit', vscode.ConfigurationTarget.Global);
-    vscode.workspace.getConfiguration('TortoisegitButtons').update('TortoiseWslHomePrefix', '');
+function registerSettings(context : vscode.ExtensionContext) {
+    const props = context.extension.packageJSON.contributes.configuration.properties;
+    for (const [key,val] of Object.entries(props)) {
+        const prop = props[key];
+        const keyName = key.replace('TortoisegitButtons.', '');
+        vscode.workspace.getConfiguration('TortoisegitButtons').update(keyName, prop.default, vscode.ConfigurationTarget.Global);
+    }
 }
 
 function openSettings(which : string = '') {
