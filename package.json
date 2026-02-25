@@ -2,7 +2,7 @@
 	"name": "tortoisegit-buttons-in-vscode",
 	"displayName": "TortoiseGit Buttons",
 	"description": "Lightweight extension, shows TortoiseGit buttons in VScode",
-	"version": "0.2.5",
+	"version": "0.2.6",
 	"publisher": "Puvox",
 	"engines": {
 		"vscode": "^1.64.0"
@@ -49,6 +49,10 @@
 			{
 				"command": "puvox.tgit.stashsave",
 				"title": "Stash Save"
+			},
+			{
+				"command": "puvox.tgit.stashreflog",
+				"title": "Stash List ☰"
 			},
 			{
 				"command": "puvox.tgit.stashapply",
@@ -305,12 +309,16 @@
 					"group": "t_git_sub_stash@1"
 				},
 				{
-					"command": "puvox.tgit.stashapply",
+					"command": "puvox.tgit.stashreflog",
 					"group": "t_git_sub_stash@2"
 				},
 				{
-					"command": "puvox.tgit.stashpop",
+					"command": "puvox.tgit.stashapply",
 					"group": "t_git_sub_stash@3"
+				},
+				{
+					"command": "puvox.tgit.stashpop",
+					"group": "t_git_sub_stash@4"
 				}
 			],
 			"puvox.tgit.sub_repoothers" : [

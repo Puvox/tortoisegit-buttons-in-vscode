@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
     outputChannel = vscode.window.createOutputChannel("tortoisegit-buttons-in-vscode");
     registerSettings(context);
 	const allCommands = [
-		'sync', 'pull', 'fetch', 'commit', 'push', 'stashsave', 'stashapply', 'stashpop', 'rename', 'revert',  'log', 'blame', 'diff', 'repostatus', 'showcompare', 'refbrowse', 'reflog', 'repobrowser', 'revisiongraph', 'resolve', 'conflicteditor', 'cleanup', 'rebase', 'merge', 'switch', 'add', 'remove', 'ignore', 'bisect', 'tag', 'settings', 'subadd', 'subupdate', 'subsync', 'export', 'lfslocks', 'daemon'
+		'sync', 'pull', 'fetch', 'commit', 'push', 'stashsave', 'stashapply', 'stashpop', 'stashreflog', 'rename', 'revert',  'log', 'blame', 'diff', 'repostatus', 'showcompare', 'refbrowse', 'reflog', 'repobrowser', 'revisiongraph', 'resolve', 'conflicteditor', 'cleanup', 'rebase', 'merge', 'switch', 'add', 'remove', 'ignore', 'bisect', 'tag', 'settings', 'subadd', 'subupdate', 'subsync', 'export', 'lfslocks', 'daemon'
 	];
 	for (const value of allCommands) {
         const callback = (uri: any) => {
@@ -26,6 +26,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 async function execTgCommand(cmd : string, path : string) {
+    if (cmd === 'stashreflog') {
+        cmd = 'reflog /ref:refs/stash';
+    }
     let finalPath = undefined;
     let tgInstallDir = undefined;
     if (path.startsWith("/") && (vscode.workspace.getConfiguration('TortoisegitButtons').get('AutodetectWsl') as boolean)) {
