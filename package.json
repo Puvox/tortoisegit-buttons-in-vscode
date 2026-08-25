@@ -2,7 +2,7 @@
 	"name": "tortoisegit-buttons-in-vscode",
 	"displayName": "TortoiseGit Buttons",
 	"description": "Lightweight extension, shows TortoiseGit buttons in VScode",
-	"version": "0.2.6",
+	"version": "0.2.7",
 	"publisher": "Puvox",
 	"engines": {
 		"vscode": "^1.64.0"
@@ -177,6 +177,10 @@
 			{
 				"command": "puvox.tgit.settings",
 				"title": "⚙️ Settings"
+			},
+			{
+				"command": "puvox.tgit.worktreelist",
+				"title": "Worktree List"
 			}
 		],
 		"submenus": [
@@ -403,8 +407,12 @@
 					"group": "t_git_sub_repoothers@70"
 				},
 				{
+					"command": "puvox.tgit.worktreelist",
+					"group": "t_git_sub_repoothers@82"
+				},
+				{
 					"command": "puvox.tgit.settings",
-					"group": "t_git_sub_repoothers@75"
+					"group": "t_git_sub_repoothers@85"
 				}
 			],
 			"puvox.tgit.sub_branch" : [
